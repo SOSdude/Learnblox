@@ -25,7 +25,7 @@ const btn = document.querySelector("#submit-file");
 btn.addEventListener("click", (e)=> {
     e.preventDefault();
 
-    Papa.parse(document.getElementById('files').files[0], {
+    Papa.parse(document.getElementById('files').files[0], { // Papa parse turns CSV to 2d array 
         header: false,
         complete: csvJSON, displayHTMLTable,
     });
@@ -51,7 +51,7 @@ btn.addEventListener("click", (e)=> {
     $("#parsed_csv_list").html(table);
   }
 
-   function csvJSON(results) {
+   function csvJSON(results) { // Convert CSV data to JSON
     var csv = results.data
     var headers = csv[0];
     var result = [];
