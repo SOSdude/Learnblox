@@ -4,23 +4,26 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/stylesheets/styles.css">
         <title>Student Dashboard</title>
     </head>
     <body>
-        <header> <!-- Header-->
-                <nav>
+        <header class="main-header"> <!-- Header-->
+                <nav class="main-nav">
+                    <h1 class="product-name">LearnBlox</h1>
+                    <img class="icon"src="../public/images/blocks.png">
                     <ul>
                         <li><a href="student-dash.html">HOME</a></li>
-                        <li>LOG OUT</li>
+                        <li><a href="">LOG OUT</a></li>
                     </ul>
                 </nav>
-                <hr>
-                <h1>LearnBlox</h1>
         </header>
 
         <section>
-            <h3><a href="join-room.html">Join Room</a></h3>
-            <h3><a href="reports.html">View Session Reports</a></h3>
+            <ul class="links">
+                <li><h2><a href="join-room.html">Join Room</a></h2></li>
+                <li><h2><a href="reports.html">View Session Reports</a></h2></li>
+            </ul>
         </section>
     </body>
 </html>
