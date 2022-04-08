@@ -20,14 +20,73 @@ const db = getFirestore()
 
 const colRef = collection(db, 'Testbanks')
 
+const submitBtn = document.querySelector("#save-file");
+submitBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+
+    Papa.parse(document.getElementById('files').files[0], {
+        header: false,
+        complete: csvJSON,
+    });
+
+    function csvJSON(results) {
+      var csv = results.data
+      var headers = csv[0];
+      var optionName = "options"
+
+      var result = [];
+      console.log(headers)
+      console.log(csv)
+  
+      for(var i = 1; i < csv.length; i++) {
+          var obj = {} 
+          var optionArr = []
+          var col = csv[i];
+          for(var j = 0; j < col.length; j++) {
+              if(j != 0 && j < 5) {
+                optionArr[j - 1] = csv[i][j]
+              } else {
+              obj[headers[j]] = csv[i][j]
+              }
+          }
+          obj[optionName] = optionArr
+
+          result.push(obj)
+          console.log(obj)
+          addDoc(colRef, obj)
+      }
+    } 
+    getName()
+});
+
+function getName() {
+  var x = document.getElementById('testBankName').value;
+  if(x == "") {
+      alert("Please Fill The Field")
+      return;
+  }
+  showSave();
+  document.getElementById('tableName').innerHTML = x;
+}
+
+function showSave() { // shows save button
+  var x = document.getElementById('hidden');
+  if(x.style.display == 'none') {
+      x.style.display = 'block';
+  }
+  else {
+      x.style.display = 'none';
+  }
+}
 
 const btn = document.querySelector("#submit-file");
 btn.addEventListener("click", (e)=> {
     e.preventDefault();
 
-    Papa.parse(document.getElementById('files').files[0], { // Papa parse turns CSV to 2d array 
+    Papa.parse(document.getElementById('files').files[0], {
         header: false,
-        complete: csvJSON, displayHTMLTable,
+        complete: displayHTMLTable,
     });
     
 
@@ -50,26 +109,8 @@ btn.addEventListener("click", (e)=> {
     
     $("#parsed_csv_list").html(table);
   }
-
-   function csvJSON(results) { // Convert CSV data to JSON
-    var csv = results.data
-    var headers = csv[0];
-    var result = [];
-    console.log(headers)
-    console.log(csv)
-
-    for(var i = 1; i < csv.length; i++) {
-        var obj = {}
-        var col = csv[i];
-        for(var j = 0; j < col.length; j++) {
-            obj[headers[j]] = csv[i][j]
-        }
-        result.push(obj)
-      //  console.log(obj)
-        addDoc(colRef, obj)
-    }
-    displayHTMLTable(results)
-  } 
+  showSave()
+   
 });
 
 
