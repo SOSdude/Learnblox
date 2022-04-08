@@ -34,7 +34,7 @@
                   <input type="file" id="files"  class="myFile" accept=".csv" required />
                 </div>
                 <div class="form-group">
-                 <button type="submit" onclick="showSave()" id="submit-file" class="btn btn-primary">Upload File</button>
+                 <button type="submit" id="submit-file" class="btn btn-primary">Upload File</button>
                  </div>
             </form>
 
@@ -44,8 +44,8 @@
             <div class="row" id="parsed_csv_list"></div>
              
             <div id = "hidden" style="display:none"> 
-                <label for="tname">Name Testbank:</label>
-                <input type="text" id="tname"  class="form-control" required/> 
+                <label for="testBankName">Name Testbank:</label>
+                <input type="text" id="testBankName"  class="form-control" required/> 
                 <button type="submit" id="save-file" class="btn btn-primary">Save Testbank</button>
                
             </div>
@@ -59,26 +59,6 @@
 
 <script type="text/javascript">
 
-    function getName() {
-        var x = document.getElementById('tname').value;
-        if(x == "") {
-            alert("Please Fill The Field")
-            return;
-        }
-        showSave();
-        document.getElementById('tableName').innerHTML = x;
-    }
-
-
-    function showSave() { // shows save button
-        var x = document.getElementById('hidden');
-        if(x.style.display == 'none') {
-            x.style.display = 'block';
-        }
-        else {
-            x.style.display = 'none';
-        }
-    }
-
+    
     
 </script>
