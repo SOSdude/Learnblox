@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+
+.product-name {
+    color: azure;
+}
+
+.icon {
+    width:110px;
+    height: auto;
+    float: left;
+}
+
+.main-nav ul li{ 
+    margin:0;
+    flex:1;
+    
+    display: inline-block; 
+    position: relative;
+}
+
+.main-nav a {
+    padding: .9em;
+    color: aliceblue;
+    text-align: right;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.main-nav{
+    display: flex;
+    padding: 0.8% 2%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+.main-header{
+    width: 100%;
+    background-size: cover;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(5,5,30,0.85), rgba(5,5,5,0.85)), url(../images/Dashboard-bkg.jpg);
+    background-position: center;
+
+}
+
+/* For dashboard links*/
+.links {
+    position: absolute;
+    left:10px;
+    top:170px;
+}
+
+.links li{
+    margin:0;
+    flex:1;
+    list-style: none;
+    margin: 100px, 0;
+    justify-content: space-between;
+}
+
+.links a{
+    display: block;
+    width: 300px;
+    height: auto;
+    padding: .5em;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.links a:hover{
+    text-decoration: underline;
+}

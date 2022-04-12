@@ -1,0 +1,20 @@
+{
+    "testbank": [
+        {
+            "question" : "What is 2+2;",
+            "option1" : "1",
+            "option2" : "2",
+            "option3" : "3",
+            "option4" : "4",
+            "answer" : "4"
+        },
+        {
+            "question" : "What color is the sky?",
+            "option1" : "blue",
+            "option2" : "red",
+            "option3" : "green",
+            "option4" : "yellow",
+            "answer" : "blue"
+        }
+    ]
+}
