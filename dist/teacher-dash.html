@@ -8,26 +8,49 @@
         <title>Teacher Dashboard</title>
     </head>
 
-    <body>
-        <header class="main-header"> <!-- Header-->
-                <nav class="main-nav">
-                    <h1 class="product-name">LearnBlox</h1>
-                    <img class="icon" src="../public/images/blocks.png"> 
-                    <ul>
-                        <li><a href="teacher-dash.html">HOME</a></li>
-                        <li><a href="">LOG OUT</a></li>
-                    </ul>
-                </nav>
-                
-        </header>
+    <body class="bg-white">
+        <section> <!--Header-->
+            <nav class="relative container max-w-7xl mx-auto px-4 sm:px-6 font-semibold text-xl " >
+                <div class="flex items-center justify-between border-b-2 border-gray-90"> <!--Nav line-->
+                    <div class="">
+                        <img src = "../public/images/logo.png" alt="" >
+                    </div>
 
-        <section>
-                <ul class ="links"> 
-                    <li><h2><a href="create-room.html">Create Room</a></h2></li>
-                    <li><h2><a href="testbank-manager.html">Testbank Manager</a></h2></li>
-                    <li><h2><a href="reports.html">View Session Reports</a></h2></li>
-                </ul>
+                    <div class="md:flex space-x-10">
+                        <a href="teacher-dash.html" class="hover:text-brightBlue ">Home</a>
+                        <a href="">Logout</a>
+                    </div>
+                    <a ref="#" class="p-3 px-14 pt-2 text-white bg-brightBlue hover:text-black rounded-full baseline" >Links</a>        
+                </div>
+            </nav>
         </section>
 
+        <div class="p-10 flex items-center justify-between">  
+            <!--Card 1-->
+            <div class="max-w-sm shadow-lg rounded overflow-hidden">
+              <img class="w-full" src="../public/images/pic1.jpg" alt="students">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2"><a href="create-room.html" class="hover:underline">Create Room</a></div>
+
+              </div>
+            </div>
+            <br>
+            <!--Card 2-->
+            <div class="max-w-sm shadow-lg rounded overflow-hidden">
+                <img class="w-full" src="../public/images/teacher.jpg" alt="students">
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2"><a href="testbank-manager.html" class="hover:underline">Testbank Manager</a></div>
+                </div>                
+              </div>
+            <br>
+            <!--Card 3-->
+            <div class="max-w-sm shadow-lg rounded overflow-hidden">
+              <img class="w-full" src="../public/images/reports.png" alt="students">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2"><a href="reports.html" class="hover:underline">View Session Reports</a></div>
+              </div>
+            </div>
+
+        </div>
     </body>
 </html>
