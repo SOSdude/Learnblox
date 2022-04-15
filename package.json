@@ -7,9 +7,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i src/styles.css -o public/stylesheets/styles.css webpack",
-    "watch": "tailwindcss -i src/styles.css -o public/stylesheets/styles.css --watch "
-
+    "build": "tailwindcss -i src/styles.css -o public/stylesheets/styles.css && webpack",
+    "watch": "tailwindcss -i src/styles.css -o public/stylesheets/styles.css --watch && webpack"
   },
   "keywords": [],
   "author": "",
