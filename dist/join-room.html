@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- Credits
+    https://tailwindui.com/components/marketing/elements/headers
+    Adapted code to create header
+   
+-->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -26,14 +31,14 @@
         </div> <!-- Header -->
 
         <section>
+            <div class="p-8">
             <form class="join-code">
                 <div class="form-group">
                   <label for="code">Enter Room Code: </label>
-                  <input type="text" id="code" />
-                  <button type="submit" onclick="joinGame()" id="create-room" class="btn btn-primary">Join Room</button>
+                  <input type="text" class="bg-gray-200"id="join-code" />
+                  <button type="submit" onclick="joinGame" id="join-room-btn" class="text-white bg-blue-500 hover:bg-blue-600 rounded px-5 py-1">Join Room</button>
                 </div>
             </form>
-            <div>
             </div>
         </section>
 
