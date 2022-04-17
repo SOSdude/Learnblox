@@ -28,15 +28,13 @@ submitBtn.addEventListener("click", (e)=>{
         complete: csvJSON,
     });
 
-    function csvJSON(results) { // convert csv to json
-      var csv = results.data
+    function csvJSON(input) { // convert csv to json
+      var csv = input.data
       var headers = csv[0];
       var optionName = "options"
 
-      var result = []; // for question
+      var result = []; // for question array
       var testbankName = document.getElementById('tableName').innerHTML
-      //console.log(headers)
-      //console.log(csv)
   
       for(var i = 1; i < csv.length; i++) {
           var obj = {} 
