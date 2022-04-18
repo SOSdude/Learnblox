@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!-- Credits
+    https://v1.tailwindcss.com/components/cards
+    Adapted code to create cards containing links
+    https://tailwindui.com/components/marketing/elements/headers
+    Adapted code to create header
+   
+-->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -9,23 +16,23 @@
     </head>
 
     <body class="bg-white">
-        <section> <!--Header-->
-            <nav class="relative container max-w-7xl mx-auto px-4 sm:px-6 font-semibold text-xl " >
-                <div class="flex items-center justify-between border-b-2 border-gray-90"> <!--Nav line-->
-                    <div class="">
-                        <img src = "../public/images/logo.png" alt="" >
-                    </div>
+        <!-- Header -->
+        <div class="relative bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+              <div class="flex justify-start lg:w-0 lg:flex-1">
+                <img class="" src="../public/images/logo.png" alt="">             
+              </div>
+              <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+              <a href="teacher-dash.html" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> Home </a>
+              <!-- Need logout link -->
+              <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600"> Logout </a>
+              </div>
+          </div>
+          </div>
+        </div> <!-- Header -->
 
-                    <div class="md:flex space-x-10">
-                        <a href="teacher-dash.html" class="hover:text-brightBlue ">Home</a>
-                        <a href="">Logout</a>
-                    </div>
-                    <a ref="#" class="p-3 px-14 pt-2 text-white bg-brightBlue hover:text-black rounded-full baseline" >Links</a>        
-                </div>
-            </nav>
-        </section>
-
-        <div class="p-10 flex items-center justify-between">  
+        <div class="p-10 flex items-center justify-center">  
             <!--Card 1-->
             <div class="max-w-sm shadow-lg rounded overflow-hidden">
               <img class="w-full" src="../public/images/pic1.jpg" alt="students">
@@ -50,7 +57,6 @@
                 <div class="font-bold text-xl mb-2"><a href="reports.html" class="hover:underline">View Session Reports</a></div>
               </div>
             </div>
-
         </div>
     </body>
 </html>

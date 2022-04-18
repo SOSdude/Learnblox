@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!-- Credits
+    https://v1.tailwindcss.com/components/cards
+    Adapted code to create cards containing links
+    https://tailwindui.com/components/marketing/elements/headers
+    Adapted code to create header
+   
+-->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,22 +15,38 @@
         <title>Student Dashboard</title>
     </head>
     <body>
-        <header class="main-header"> <!-- Header-->
-                <nav class="main-nav">
-                    <h1 class="product-name">LearnBlox</h1>
-                    <img class="icon"src="../public/images/blocks.png">
-                    <ul>
-                        <li><a href="student-dash.html">HOME</a></li>
-                        <li><a href="">LOG OUT</a></li>
-                    </ul>
-                </nav>
-        </header>
+        <!-- Header -->
+        <div class="relative bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+              <div class="flex justify-start lg:w-0 lg:flex-1">
+                <img class="" src="../public/images/logo.png" alt="">             
+              </div>
+              <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+              <a href="student-dash.html" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> Home </a>
+              <!-- Need logout link -->
+              <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600"> Logout </a>
+              </div>
+          </div>
+          </div>
+        </div> <!-- Header -->
 
-        <section>
-            <ul class="links">
-                <li><h2><a href="join-room.html">Join Room</a></h2></li>
-                <li><h2><a href="reports.html">View Session Reports</a></h2></li>
-            </ul>
-        </section>
+    <div class="p-10 flex flex-col items-center justify-center space-x-10">  
+        <!--Card 1-->
+        <div class="max-w-sm shadow-lg rounded overflow-hidden ">
+          <img class="w-full" src="../public/images/pic1.jpg" alt="students">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2"><a href="join-room.html" class="hover:underline">Join Room</a></div>
+          </div>
+        </div>
+        <!--Card 2-->
+        <div class="max-w-sm shadow-lg rounded overflow-hidden">
+          <img class="w-full" src="../public/images/reports.png" alt="reports">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2"><a href="reports.html" class="hover:underline">View Session Reports</a></div>
+          </div>
+        </div>
+
+    </div>
     </body>
 </html>

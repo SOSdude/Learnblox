@@ -17,29 +17,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
-
 const colRef = collection(db, 'Testbanks')
 
 const submitBtn = document.querySelector("#save-file");
 submitBtn.addEventListener("click", (e)=>{
     e.preventDefault();
 
-
     Papa.parse(document.getElementById('files').files[0], {
         header: false,
         complete: csvJSON,
     });
 
-    function csvJSON(results) {
-      var csv = results.data
+    function csvJSON(input) { // convert csv to json
+      var csv = input.data
       var headers = csv[0];
       var optionName = "options"
 
-      var result = [];
+      var result = []; // for question array
       var testbankName = document.getElementById('tableName').innerHTML
-      colRef = collection(db, 'Testbanks/' + testbankName)
-      console.log(headers)
-      console.log(csv)
   
       for(var i = 1; i < csv.length; i++) {
           var obj = {} 
@@ -53,11 +48,11 @@ submitBtn.addEventListener("click", (e)=>{
               }
           }
           obj[optionName] = optionArr
-
           result.push(obj)
-          console.log(obj)
-          addDoc(colRef, obj)
       }
+      var container = {}
+      container["questions"] = result
+      addDoc(colRef, container)
     } 
     getName()
 });
