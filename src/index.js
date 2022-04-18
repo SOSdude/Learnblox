@@ -19,7 +19,8 @@ const app = initializeApp(firebaseConfig)
 const db = getFirestore()
 const colRef = collection(db, 'Testbanks')
 
-const submitBtn = document.querySelector("#save-file");
+const submitBtn = document.querySelector("#save-file"); 
+if(submitBtn) {
 submitBtn.addEventListener("click", (e)=>{
     e.preventDefault();
 
@@ -56,6 +57,7 @@ submitBtn.addEventListener("click", (e)=>{
     } 
     getName()
 });
+}
 
 function getName() {
   var x = document.getElementById('testBankName').value;
@@ -78,6 +80,7 @@ function showSave() { // shows save button
 }
 
 const btn = document.querySelector("#submit-file");
+if(btn) {
 btn.addEventListener("click", (e)=> {
     e.preventDefault();
 
@@ -109,5 +112,52 @@ btn.addEventListener("click", (e)=> {
   showSave()
    
 });
+}
 
 
+const users = collection(db, 'Users')
+
+const signUpBtn = document.querySelector("#sign-up");
+if(signUpBtn) {
+signUpBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.alert("okay");
+    const username = document.getElementById('user_user').value
+    const password = document.getElementById('user_pass').value;
+    const user = {
+        username: username,
+        password: password,
+    };
+    addDoc(users, user);
+});
+}
+
+
+const signInBtn = document.querySelector("#sign-in");
+if(signInBtn) { 
+signInBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    const username = document.getElementById('user_user').value
+    const password = document.getElementById('user_pass').value
+    const user = {
+        username: username,
+        password: password
+    }
+    const userRef = users.where('username', '==', username)
+    console.log(username)
+    if(userRef.length == 0) {
+        alert("User Not Found")
+        return;
+    }
+    if(userRef.password != password) {
+        alert("Incorrect Password")
+        return;
+    }
+    else
+    {
+        alert("Login Successful")
+        window.location.href = "teacher-dash.html"
+    }
+});
+}
