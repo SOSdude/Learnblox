@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-## LearnBlox
+LearnBlox
 ##Product Description
 LearnBlox is a web game that allows for an interactive and engaging online learning experience for educators and students alike. It aims to address the problem of young students not being engaged in online learning by providing them with access to a fun and educational 2D browser game.
 
