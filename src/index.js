@@ -145,9 +145,7 @@ signInBtn.addEventListener("click", (e)=>{
         password: password
     }
     //console.log("test");
-    const userRef = query(users, where("username", "!=", user.username))
-    console.log("userRef: "+userRef);
-    console.log(user)
+    
     alert("Login Successful")
     window.location.href = "teacher-dash.html"
 });
