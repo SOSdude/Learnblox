@@ -121,7 +121,7 @@ const signUpBtn = document.querySelector("#sign-up");
 if(signUpBtn) {
 signUpBtn.addEventListener("click", (e)=>{
     e.preventDefault();
-    window.alert("okay");
+    window.alert("Signup Successful");
     const username = document.getElementById('user_user').value
     const password = document.getElementById('user_pass').value;
     const user = {
